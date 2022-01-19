@@ -95,7 +95,6 @@ class LoginView extends GetView<LoginController> {
                     children: [
                       Text(
                         "Use Sosial Login",
-                        style: TextStyle(fontWeight: FontWeight.w600),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 20),
@@ -162,13 +161,18 @@ class Button extends StatelessWidget {
             style: TextStyle(
               color: Color(textCol),
               fontSize: 16,
+              fontWeight: FontWeight.w700,
             ),
           ),
         ],
       ),
       style: ElevatedButton.styleFrom(
-          primary: Color(backCol).withOpacity(opacity),
-          fixedSize: Size(167, 50)),
+        primary: Color(backCol).withOpacity(opacity),
+        fixedSize: Size(167, 50),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
     );
   }
 }
