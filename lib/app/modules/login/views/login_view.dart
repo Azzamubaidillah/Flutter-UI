@@ -38,12 +38,19 @@ class LoginView extends GetView<LoginController> {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
                     "Welcome to",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color(0xFF22215B),
+                    ),
                   ),
                 ),
                 Text(
                   "Dirrbox",
-                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 38),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 38,
+                    color: Color(0xFF22215B),
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -52,7 +59,10 @@ class LoginView extends GetView<LoginController> {
                   width: 250,
                   child: Text(
                     "Best cloud storage platform for all business and individuals to manage there data \n\nJoin For Free.",
-                    style: TextStyle(fontSize: 14),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFF7B7F9E),
+                    ),
                   ),
                 ),
                 SizedBox(
