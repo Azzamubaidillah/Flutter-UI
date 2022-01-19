@@ -22,6 +22,8 @@ flutter:
   fonts:
     - family: Gilroy
       fonts:
-        - asset: assets\fonts\Gilroy-Light.otf
+        - asset: assets/fonts/Gilroy-Regular.ttf
+        - asset: assets/fonts/Gilroy-Semibold.ttf
+          weight: 600
   assets: 
     - assets/images/

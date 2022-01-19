@@ -35,7 +35,10 @@ class LoginView extends GetView<LoginController> {
                   ),
                 ),
                 Text("Welcome to"),
-                Text("Dirrbox"),
+                Text(
+                  "Dirrbox",
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
                 Container(
                   width: 200,
                   child: Text(
