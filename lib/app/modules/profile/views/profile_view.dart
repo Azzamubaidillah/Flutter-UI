@@ -113,6 +113,33 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ),
             ),
+            Row(
+              children: [
+                Text(
+                  "My Folders",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Expanded(
+                  child: SizedBox(
+                    width: 1,
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.add),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.settings),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.keyboard_arrow_right),
+                  onPressed: () {},
+                ),
+              ],
+            )
           ],
         ),
       ),
