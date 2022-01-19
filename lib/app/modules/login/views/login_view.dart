@@ -44,15 +44,20 @@ class LoginView extends GetView<LoginController> {
                 ),
                 Row(
                   children: [
-                    TextButton(
-                      onPressed: () {},
-                      child: Row(
-                        children: [
-                          Image.asset("assets/images/fingerprint.png"),
-                          Text("SmartId"),
-                        ],
-                      ),
-                      style: TextButton.styleFrom(primary: Color(0xFF567DF4)),
+                    Button(
+                      text: "SmartId",
+                      textCol: 0xFF567DF4,
+                      icon: "assets/images/fingerprint.png",
+                      backCol: 0xFFEEF2FE,
+                      opacity: 1,
+                    ),
+                    SizedBox(width: 10),
+                    Button(
+                      text: "SignIn",
+                      textCol: 0xFFFFFFFF,
+                      icon: "assets/images/arrow_right.png",
+                      backCol: 0xFF567DF4,
+                      opacity: 1,
                     ),
                   ],
                 )
@@ -61,6 +66,46 @@ class LoginView extends GetView<LoginController> {
           )
         ],
       ),
+    );
+  }
+}
+
+class Button extends StatelessWidget {
+  const Button({
+    Key? key,
+    required this.icon,
+    required this.backCol,
+    required this.textCol,
+    required this.text,
+    required this.opacity,
+  }) : super(key: key);
+  final String text;
+  final String icon;
+  final int backCol;
+  final int textCol;
+  final double opacity;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {},
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(icon),
+          SizedBox(width: 5),
+          Text(
+            text,
+            style: TextStyle(
+              color: Color(textCol),
+              fontSize: 16,
+            ),
+          ),
+        ],
+      ),
+      style: ElevatedButton.styleFrom(
+          primary: Color(backCol).withOpacity(opacity),
+          fixedSize: Size(150, 50)),
     );
   }
 }
