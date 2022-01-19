@@ -77,6 +77,42 @@ class LoginView extends GetView<LoginController> {
                       opacity: 1,
                     ),
                   ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Use Sosial Login",
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              icon: Image.asset("assets/images/Instagram.png"),
+                              onPressed: () {},
+                            ),
+                            IconButton(
+                              icon: Image.asset("assets/images/Twitter.png"),
+                              onPressed: () {},
+                            ),
+                            IconButton(
+                              icon: Image.asset("assets/images/Facebook.png"),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text("Create an Account"),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
