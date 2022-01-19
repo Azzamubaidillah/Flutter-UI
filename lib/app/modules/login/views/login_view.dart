@@ -34,18 +34,32 @@ class LoginView extends GetView<LoginController> {
                     fit: BoxFit.contain,
                   ),
                 ),
-                Text("Welcome to"),
-                Text(
-                  "Dirrbox",
-                  style: TextStyle(fontWeight: FontWeight.w600),
-                ),
-                Container(
-                  width: 200,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
-                    "Best cloud storage platform for all business and individuals to manage there data \n\nJoin For Free.",
+                    "Welcome to",
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
+                Text(
+                  "Dirrbox",
+                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 38),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: 250,
+                  child: Text(
+                    "Best cloud storage platform for all business and individuals to manage there data \n\nJoin For Free.",
+                    style: TextStyle(fontSize: 14),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Button(
                       text: "SmartId",
@@ -108,7 +122,7 @@ class Button extends StatelessWidget {
       ),
       style: ElevatedButton.styleFrom(
           primary: Color(backCol).withOpacity(opacity),
-          fixedSize: Size(150, 50)),
+          fixedSize: Size(167, 50)),
     );
   }
 }
