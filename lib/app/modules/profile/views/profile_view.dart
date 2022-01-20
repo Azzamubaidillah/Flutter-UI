@@ -150,16 +150,14 @@ class ProfileView extends GetView<ProfileController> {
                     date: "December 20.2020",
                     textColor: 0xFF415EB6,
                     backColor: 0xFFEEF7FE,
-                    folderAsset: "assets/images/folder_ungu.png",
-                    optionAsset: "assets/images/option_ungu.png",
+                    assetColor: "ungu",
                   ),
                   FolderCard(
                     text: "SVG Apps",
                     date: "December 14.2020",
                     textColor: 0xFFFFB110,
                     backColor: 0xFFFFFBEC,
-                    folderAsset: "assets/images/folder_kuning.png",
-                    optionAsset: "assets/images/option_kuning.png",
+                    assetColor: "kuning",
                   ),
                 ],
               ),
@@ -172,16 +170,14 @@ class ProfileView extends GetView<ProfileController> {
                   date: "December 22.2020",
                   textColor: 0xFFF45656,
                   backColor: 0xFFFEEEEE,
-                  folderAsset: "assets/images/folder_merah.png",
-                  optionAsset: "assets/images/option_merah.png",
+                  assetColor: "merah",
                 ),
                 FolderCard(
                   text: "SVG Apps",
                   date: "December 14.2020",
                   textColor: 0xFF23B0B0,
                   backColor: 0xFFF0FFFF,
-                  folderAsset: "assets/images/folder_biru.png",
-                  optionAsset: "assets/images/option_biru.png",
+                  assetColor: "biru",
                 ),
               ],
             ),
@@ -243,12 +239,11 @@ class FolderCard extends StatelessWidget {
     required this.textColor,
     required this.text,
     required this.date,
-    required this.folderAsset,
-    required this.optionAsset,
+    required this.assetColor,
   }) : super(key: key);
 
   final int backColor, textColor;
-  final String text, date, folderAsset, optionAsset;
+  final String text, date, assetColor;
 
   @override
   Widget build(BuildContext context) {
@@ -263,8 +258,8 @@ class FolderCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(folderAsset),
-                Image.asset(optionAsset),
+                Image.asset("assets/images/folder_$assetColor.png"),
+                Image.asset("assets/images/option_$assetColor.png"),
               ],
             ),
             SizedBox(
