@@ -140,52 +140,113 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  FolderCard(
+                    text: "Mobile Apps",
+                    date: "December 20.2020",
+                    textColor: 0xFF415EB6,
+                    backColor: 0xFFEEF7FE,
+                    folderAsset: "assets/images/folder_ungu.png",
+                    optionAsset: "assets/images/option_ungu.png",
+                  ),
+                  FolderCard(
+                    text: "SVG Apps",
+                    date: "December 14.2020",
+                    textColor: 0xFFFFB110,
+                    backColor: 0xFFFFFBEC,
+                    folderAsset: "assets/images/folder_kuning.png",
+                    optionAsset: "assets/images/option_kuning.png",
+                  ),
+                ],
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  width: Get.width * 0.4,
-                  height: 110,
-                  child: Padding(
-                    padding: const EdgeInsets.all(18),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image.asset("assets/images/folder_ungu.png"),
-                            Image.asset("assets/images/option.png"),
-                          ],
-                        ),
-                        Text(
-                          "Mobile Apps",
-                          style: TextStyle(
-                            color: Color(0xFF415EB6),
-                            fontWeight: FontWeight.w600,
-                            fontSize: 15,
-                          ),
-                        ),
-                        Text(
-                          "December 20.2020",
-                          style: TextStyle(
-                            color: Color(0xFF415EB6),
-                            fontSize: 10,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFEEF7FE),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
+                FolderCard(
+                  text: "Prototypes",
+                  date: "December 22.2020",
+                  textColor: 0xFFF45656,
+                  backColor: 0xFFFEEEEE,
+                  folderAsset: "assets/images/folder_merah.png",
+                  optionAsset: "assets/images/option_merah.png",
+                ),
+                FolderCard(
+                  text: "SVG Apps",
+                  date: "December 14.2020",
+                  textColor: 0xFF23B0B0,
+                  backColor: 0xFFF0FFFF,
+                  folderAsset: "assets/images/folder_biru.png",
+                  optionAsset: "assets/images/option_biru.png",
                 ),
               ],
-            )
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class FolderCard extends StatelessWidget {
+  const FolderCard({
+    Key? key,
+    required this.backColor,
+    required this.textColor,
+    required this.text,
+    required this.date,
+    required this.folderAsset,
+    required this.optionAsset,
+  }) : super(key: key);
+
+  final int backColor, textColor;
+  final String text, date, folderAsset, optionAsset;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: Get.width * 0.4,
+      height: 110,
+      child: Padding(
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(folderAsset),
+                Image.asset(optionAsset),
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              text,
+              style: TextStyle(
+                color: Color(textColor),
+                fontWeight: FontWeight.w600,
+                fontSize: 15,
+              ),
+            ),
+            Text(
+              date,
+              style: TextStyle(
+                color: Color(textColor),
+                fontSize: 10,
+              ),
+            ),
+          ],
+        ),
+      ),
+      decoration: BoxDecoration(
+        color: Color(backColor),
+        borderRadius: BorderRadius.circular(20),
       ),
     );
   }
