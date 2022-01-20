@@ -185,6 +185,50 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                children: [
+                  Text(
+                    "Recent Uploads",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      width: 1,
+                    ),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.arrow_circle_up),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              children: [
+                Image.asset("assets/images/word.png"),
+                SizedBox(width: 15),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Projects.docs",
+                      style:
+                          TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                    ),
+                    Text(
+                      "November 22 2020",
+                      style: TextStyle(fontSize: 13),
+                    ),
+                  ],
+                ),
+                Expanded(child: SizedBox(width: 10)),
+                Text("300kb"),
+              ],
+            )
           ],
         ),
       ),
