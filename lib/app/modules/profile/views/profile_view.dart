@@ -139,6 +139,50 @@ class ProfileView extends GetView<ProfileController> {
                   onPressed: () {},
                 ),
               ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: Get.width * 0.4,
+                  height: 110,
+                  child: Padding(
+                    padding: const EdgeInsets.all(18),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.asset("assets/images/folder_ungu.png"),
+                            Image.asset("assets/images/option.png"),
+                          ],
+                        ),
+                        Text(
+                          "Mobile Apps",
+                          style: TextStyle(
+                            color: Color(0xFF415EB6),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15,
+                          ),
+                        ),
+                        Text(
+                          "December 20.2020",
+                          style: TextStyle(
+                            color: Color(0xFF415EB6),
+                            fontSize: 10,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFEEF7FE),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ],
             )
           ],
         ),
