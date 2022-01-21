@@ -9,6 +9,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: 4.6.1
   google_fonts: 2.2.0
+  flutter_signin_button: 2.0.0
   flutter: 
     sdk: flutter
 
@@ -19,15 +20,12 @@ dev_dependencies:
     sdk: flutter
 
 flutter: 
-  uses-material-design: true
-
-  assets:
+  assets: 
     - assets/icons/
     - assets/images/
-
-  fonts:
+  fonts: 
     - family: Poppins
-      fonts:
+      fonts: 
         - asset: assets/fonts/Poppins-Thin.ttf
           weight: 100
         - asset: assets/fonts/Poppins-ExtraLight.ttf
@@ -46,3 +44,6 @@ flutter:
           weight: 800
         - asset: assets/fonts/Poppins-Black.ttf
           weight: 900
+
+  uses-material-design: true
+
