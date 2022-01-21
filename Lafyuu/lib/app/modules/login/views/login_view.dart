@@ -40,15 +40,17 @@ class LoginView extends GetView<LoginController> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  SignInButton(
-                    Buttons.Google,
-                    onPressed: () {},
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: kDefaultPadding),
+                    child: SocialMediaAuthButton(
+                      icon: "assets/icons/google.png",
+                      text: "Login with Google",
+                    ),
                   ),
-                  SignInButtonBuilder(
-                    text: 'Sign in with Facebook',
-                    icon: Icons.facebook,
-                    onPressed: () {},
-                    backgroundColor: Color(0xFF4267B2),
+                  SocialMediaAuthButton(
+                    icon: "assets/icons/facebook.png",
+                    text: "Login with Facebook",
                   ),
                 ],
               )
@@ -56,6 +58,41 @@ class LoginView extends GetView<LoginController> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class SocialMediaAuthButton extends StatelessWidget {
+  const SocialMediaAuthButton({
+    Key? key,
+    required this.text,
+    required this.icon,
+  }) : super(key: key);
+
+  final String text;
+  final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {},
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Image.asset(icon),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
+            child: Text(
+              text,
+              style: Theme.of(context).textTheme.button!.merge(
+                    TextStyle(color: grey),
+                  ),
+            ),
+          ),
+          SizedBox(width: 5),
+        ],
+      ),
+      style: ElevatedButton.styleFrom(primary: Colors.white),
     );
   }
 }
