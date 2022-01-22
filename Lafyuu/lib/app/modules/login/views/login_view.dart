@@ -53,6 +53,20 @@ class LoginView extends GetView<LoginController> {
                     text: "Login with Facebook",
                   ),
                 ],
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text("Forgot Password?"),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Dont have an account?"),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Register"),
+                  )
+                ],
               )
             ],
           ),
@@ -123,13 +137,14 @@ class LoginFill extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
           child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(vertical: kDefaultPadding),
-              primary: bluePrimary,
-              onPrimary: Colors.white,
-            ),
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(bluePrimary),
+                shadowColor: MaterialStateProperty.all(redPrimary)),
             onPressed: () {},
-            child: Text('Sign In'),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
+              child: Text('Sign In'),
+            ),
           ),
         ),
       ],
