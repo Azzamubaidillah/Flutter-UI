@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:lafyuu/app/modules/favorite/bindings/favorite_binding.dart';
+import 'package:lafyuu/app/modules/favorite/views/favorite_view.dart';
 import 'package:lafyuu/app/modules/home/bindings/home_binding.dart';
 import 'package:lafyuu/app/modules/home/views/home_view.dart';
 import 'package:lafyuu/app/modules/login/bindings/login_binding.dart';
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.FAVORITE,
+      page: () => FavoriteView(),
+      binding: FavoriteBinding(),
     ),
   ];
 }
