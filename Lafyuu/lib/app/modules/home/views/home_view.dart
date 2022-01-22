@@ -27,10 +27,60 @@ class HomeView extends GetView<HomeController> {
                 CategorySection(),
                 SectionHeader(leftText: "Flash Sale", rightText: "See More"),
                 FlashSaleSection(),
+                SectionHeader(leftText: "Mega Sale", rightText: "See More"),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(children: [
+                    ProductCard(
+                      image: "assets/images/maxi_red.png",
+                      productName: "MS - QUILTED MAXI CROS...",
+                    ),
+                    ProductCard(
+                      image: "assets/images/nike_black.png",
+                      productName: "MS - Nike Air Max 270 React...",
+                    ),
+                    ProductCard(
+                      image: "assets/images/maxi_green.png",
+                      productName: "MS - Nike Air Max 270 React...",
+                    ),
+                    ProductCard(
+                      image: "assets/images/nike_yellow.png",
+                      productName: "MS - Nike Air\nMax 270 React...",
+                    ),
+                  ]),
+                )
               ],
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search_outlined),
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart_outlined),
+            label: 'Cart',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_offer_outlined),
+            label: 'Offer',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: 'Account',
+          ),
+        ],
+        selectedItemColor: bluePrimary,
+        unselectedItemColor: grey,
+        unselectedLabelStyle: TextStyle(color: grey),
+        showUnselectedLabels: true,
       ),
     );
   }
