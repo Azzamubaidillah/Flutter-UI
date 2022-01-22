@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:line_icons/line_icons.dart';
 
 import '../../../../const.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
-  final Icon _icon = Icon(LineIcons.code);
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -25,62 +22,190 @@ class HomeView extends GetView<HomeController> {
                 Divider(),
                 BannerPromotion(),
                 Slider(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Category",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline4!
-                          .merge(TextStyle(color: dark)),
-                    ),
-                    Text(
-                      "More Category",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline4!
-                          .merge(TextStyle(color: bluePrimary)),
-                    ),
-                  ],
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CategoryIcon(
-                        text: "Man Shirt",
-                        icon: "assets/icons/man_shirt.png",
-                      ),
-                      CategoryIcon(
-                        text: "Dress",
-                        icon: "assets/icons/dress.png",
-                      ),
-                      CategoryIcon(
-                        text: "Man Work\nEquipment",
-                        icon: "assets/icons/man_bag.png",
-                      ),
-                      CategoryIcon(
-                        text: "Woman Bag",
-                        icon: "assets/icons/woman_bag.png",
-                      ),
-                      CategoryIcon(
-                        text: "Man Shoes",
-                        icon: "assets/icons/man_shoes.png",
-                      ),
-                      CategoryIcon(
-                        text: "Woman Heels",
-                        icon: "assets/icons/woman_shoes.png",
-                      ),
-                    ],
-                  ),
-                ),
+                SectionHeader(
+                    leftText: "Category", rightText: "More Categories"),
+                CategorySection(),
+                SectionHeader(leftText: "Flash Sale", rightText: "See More"),
+                FlashSaleSection(),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class FlashSaleSection extends StatelessWidget {
+  const FlashSaleSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(children: [
+        ProductCard(
+          image: "assets/images/nike_yellow.png",
+          productName: "FS - Nike Air\nMax 270 React...",
+        ),
+        ProductCard(
+          image: "assets/images/maxi_black.png",
+          productName: "FS - QUILTED MAXI CROS...",
+        ),
+        ProductCard(
+          image: "assets/images/nike_red.png",
+          productName: "FS - Nike Air Max 270 React...",
+        ),
+        ProductCard(
+          image: "assets/images/nike_yellow.png",
+          productName: "FS - Nike Air\nMax 270 React...",
+        ),
+      ]),
+    );
+  }
+}
+
+class ProductCard extends StatelessWidget {
+  const ProductCard({
+    Key? key,
+    required this.image,
+    required this.productName,
+  }) : super(key: key);
+  final String image, productName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
+      child: Container(
+        width: 141,
+        height: 240,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: light),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(kDefaultPadding),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(image),
+              Text(
+                productName,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline6!
+                    .merge(TextStyle(color: dark)),
+              ),
+              Text(
+                "\$299,43",
+                style: Theme.of(context)
+                    .textTheme
+                    .headline5!
+                    .merge(TextStyle(color: bluePrimary)),
+              ),
+              Row(
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      text: "\$534,33",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 12,
+                        decoration: TextDecoration.lineThrough,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    " 24% Off",
+                    style: TextStyle(
+                        color: redPrimary,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w900),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CategorySection extends StatelessWidget {
+  const CategorySection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CategoryIcon(
+            text: "Man Shirt",
+            icon: "assets/icons/man_shirt.png",
+          ),
+          CategoryIcon(
+            text: "Dress",
+            icon: "assets/icons/dress.png",
+          ),
+          CategoryIcon(
+            text: "Man Work\nEquipment",
+            icon: "assets/icons/man_bag.png",
+          ),
+          CategoryIcon(
+            text: "Woman Bag",
+            icon: "assets/icons/woman_bag.png",
+          ),
+          CategoryIcon(
+            text: "Man Shoes",
+            icon: "assets/icons/man_shoes.png",
+          ),
+          CategoryIcon(
+            text: "Woman Heels",
+            icon: "assets/icons/woman_shoes.png",
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SectionHeader extends StatelessWidget {
+  const SectionHeader({
+    Key? key,
+    required this.leftText,
+    required this.rightText,
+  }) : super(key: key);
+  final String leftText, rightText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          leftText,
+          style: Theme.of(context)
+              .textTheme
+              .headline4!
+              .merge(TextStyle(color: dark)),
+        ),
+        Text(
+          rightText,
+          style: Theme.of(context)
+              .textTheme
+              .headline4!
+              .merge(TextStyle(color: bluePrimary)),
+        ),
+      ],
     );
   }
 }
@@ -299,9 +424,11 @@ class Field extends StatelessWidget {
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: light),
+          borderRadius: BorderRadius.circular(10),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: bluePrimary),
+          borderRadius: BorderRadius.circular(10),
         ),
         suffixIcon: Icon(
           icon,
