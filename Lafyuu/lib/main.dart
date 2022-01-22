@@ -55,7 +55,8 @@ void main() {
               fontSize: 10,
               fontWeight: FontWeight.w400,
               height: 1.5,
-              letterSpacing: 0.5),
+              letterSpacing: 0.5,
+              color: grey),
           button: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w700,

@@ -43,11 +43,81 @@ class HomeView extends GetView<HomeController> {
                           .merge(TextStyle(color: bluePrimary)),
                     ),
                   ],
-                )
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CategoryIcon(
+                        text: "Man Shirt",
+                        icon: "assets/icons/man_shirt.png",
+                      ),
+                      CategoryIcon(
+                        text: "Dress",
+                        icon: "assets/icons/dress.png",
+                      ),
+                      CategoryIcon(
+                        text: "Man Work\nEquipment",
+                        icon: "assets/icons/man_bag.png",
+                      ),
+                      CategoryIcon(
+                        text: "Woman Bag",
+                        icon: "assets/icons/woman_bag.png",
+                      ),
+                      CategoryIcon(
+                        text: "Man Shoes",
+                        icon: "assets/icons/man_shoes.png",
+                      ),
+                      CategoryIcon(
+                        text: "Woman Heels",
+                        icon: "assets/icons/woman_shoes.png",
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class CategoryIcon extends StatelessWidget {
+  const CategoryIcon({
+    Key? key,
+    required this.text,
+    required this.icon,
+  }) : super(key: key);
+
+  final String text;
+  final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
+      child: Column(
+        children: [
+          Container(
+            width: 60,
+            height: 60,
+            child: Image.asset(icon),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: light),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5),
+            child: Text(
+              text,
+              style: Theme.of(context).textTheme.caption!,
+            ),
+          )
+        ],
       ),
     );
   }
