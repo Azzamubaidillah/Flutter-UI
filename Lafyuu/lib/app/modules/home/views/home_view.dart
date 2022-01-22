@@ -28,27 +28,7 @@ class HomeView extends GetView<HomeController> {
                 SectionHeader(leftText: "Flash Sale", rightText: "See More"),
                 FlashSaleSection(),
                 SectionHeader(leftText: "Mega Sale", rightText: "See More"),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(children: [
-                    ProductCard(
-                      image: "assets/images/maxi_red.png",
-                      productName: "MS - QUILTED MAXI CROS...",
-                    ),
-                    ProductCard(
-                      image: "assets/images/nike_black.png",
-                      productName: "MS - Nike Air Max 270 React...",
-                    ),
-                    ProductCard(
-                      image: "assets/images/maxi_green.png",
-                      productName: "MS - Nike Air Max 270 React...",
-                    ),
-                    ProductCard(
-                      image: "assets/images/nike_yellow.png",
-                      productName: "MS - Nike Air\nMax 270 React...",
-                    ),
-                  ]),
-                )
+                MegaSaleSection()
               ],
             ),
           ),
@@ -82,6 +62,37 @@ class HomeView extends GetView<HomeController> {
         unselectedLabelStyle: TextStyle(color: grey),
         showUnselectedLabels: true,
       ),
+    );
+  }
+}
+
+class MegaSaleSection extends StatelessWidget {
+  const MegaSaleSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(children: [
+        ProductCard(
+          image: "assets/images/maxi_red.png",
+          productName: "MS - QUILTED MAXI CROS...",
+        ),
+        ProductCard(
+          image: "assets/images/nike_black.png",
+          productName: "MS - Nike Air Max 270 React...",
+        ),
+        ProductCard(
+          image: "assets/images/maxi_green.png",
+          productName: "MS - Nike Air Max 270 React...",
+        ),
+        ProductCard(
+          image: "assets/images/nike_yellow.png",
+          productName: "MS - Nike Air\nMax 270 React...",
+        ),
+      ]),
     );
   }
 }
