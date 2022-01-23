@@ -12,13 +12,13 @@ a minimal Cloud Storage app design by Heroninja at Figma
 ### The Implementation
 
 **Login Page**
-!["Dirrbox Login-View"](Screenshot\dirrbox2.png)
+!["Dirrbox Login-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/dirrbox2.png?raw=true)
 
 **Home Page**
-!["Dirrbox Home-View"](Screenshot\dirrbox_1.png)
+!["Dirrbox Home-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/dirrbox_1.png?raw=true)
 
 **Profile Page**
-!["Dirrbox Profile-View"](Screenshot\dirrbox3.png)
+!["Dirrbox Profile-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/dirrbox3.png?raw=true)
 
 
 ## Lafyuu Apps
@@ -31,13 +31,13 @@ a beautiful e-commerce app design by Heroninja at Figma
 ### The Implementation
 
 **Splashscreen Page**
-!["Dirrbox Splashscreen-View"](Screenshot\lafyuu1.png)
+!["Lafyuu Splashscreen-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu1.png?raw=true)
 
 **Login Page**
-!["Dirrbox Home-View"](Screenshot\lafyuu2.png)
+!["Lafyuu Login-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu2.png?raw=true)
 
 **Home Page**
-!["Dirrbox Profile-View"](Screenshot\lafyuu3.png)
+!["Lafyuu Home-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu3.png?raw=true)
 
 **Product Detail Page**
-!["Dirrbox Profile-View"](Screenshot\lafyuu4.png)
+!["Lafyuu Detail-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu4.png?raw=true)
