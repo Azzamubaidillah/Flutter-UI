@@ -396,7 +396,10 @@ class BannerPromotion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset("assets/images/promotion.png"),
+        Image.asset(
+          "assets/images/promotion.png",
+          width: Get.width,
+        ),
         Padding(
           padding: const EdgeInsets.fromLTRB(24, 32, 0, 32),
           child: Column(
