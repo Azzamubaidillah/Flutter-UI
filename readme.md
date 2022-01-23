@@ -11,14 +11,20 @@ a minimal Cloud Storage app design by Heroninja at Figma
 
 ### The Implementation
 
+
 **Login Page**
-!["Dirrbox Login-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/dirrbox2.png?raw=true)
+
+<img src="https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/dirrbox2.png?raw=true" alt="Dirrbox Login-View" width="250"/>
+
 
 **Home Page**
-!["Dirrbox Home-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/dirrbox_1.png?raw=true)
+
+<img src="https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/dirrbox_1.png?raw=true" alt="Dirrbox Home-View" width="250"/>
+
 
 **Profile Page**
-!["Dirrbox Profile-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/dirrbox3.png?raw=true)
+
+<img src="https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/dirrbox3.png?raw=true" alt="Dirrbox Profile-View" width="250"/>
 
 
 ## Lafyuu Apps
@@ -31,13 +37,17 @@ a beautiful e-commerce app design by Heroninja at Figma
 ### The Implementation
 
 **Splashscreen Page**
-!["Lafyuu Splashscreen-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu1.png?raw=true)
+
+<img src="https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu1.png?raw=true" alt="Lafyuu Splashscreen-View" width="250"/>
 
 **Login Page**
-!["Lafyuu Login-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu2.png?raw=true)
+
+<img src="https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu2.png?raw=true" alt="Lafyuu Login-View" width="250"/>
 
 **Home Page**
-!["Lafyuu Home-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu3.png?raw=true)
+
+<img src="https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu3.png?raw=true" alt="Lafyuu Home-View" width="250"/>
 
 **Product Detail Page**
-!["Lafyuu Detail-View"](https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu4.png?raw=true)
+
+<img src="https://github.com/Azzamubaidillah/Flutter-Design-Repo/blob/main/Screenshot/lafyuu4.png?raw=true" alt="Lafyuu Detail-View" width="250"/>
