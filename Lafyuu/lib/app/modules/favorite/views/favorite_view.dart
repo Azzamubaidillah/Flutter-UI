@@ -37,118 +37,175 @@ class FavoriteView extends GetView<FavoriteController> {
             ),
           ],
         ),
-        body: Column(
-          children: [
-            Image.asset("assets/images/nike_big.png"),
-            Slider(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ProductNameStarPrice(),
-                  Text(
-                    "Select Size",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline4!
-                        .merge(TextStyle(color: dark)),
-                  ),
-                  SizedBox(height: 10),
-                  SizeScrollable(),
-                  SizedBox(height: 10),
-                  Text(
-                    "Select Color",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline4!
-                        .merge(TextStyle(color: dark)),
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
-                        child: Container(
-                          width: 45,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: yellowPrimary,
-                          ),
-                          child: Center(
-                            child: Container(
-                              width: 15,
-                              height: 15,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: light,
-                              ),
-                            ),
-                          ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Image.asset("assets/images/nike_big.png"),
+              Slider(),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ProductNameStarPrice(),
+                    Text(
+                      "Select Size",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline4!
+                          .merge(TextStyle(color: dark)),
+                    ),
+                    SizedBox(height: 10),
+                    SizeScrollable(),
+                    SizedBox(height: 10),
+                    Text(
+                      "Select Color",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline4!
+                          .merge(TextStyle(color: dark)),
+                    ),
+                    SelectColorSection(),
+                    Text(
+                      "Specification",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline4!
+                          .merge(TextStyle(color: dark)),
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Shown: ",
+                          style: TextStyle(color: dark),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
-                        child: Container(
-                          width: 45,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: bluePrimary,
-                          ),
+                        Text(
+                          "Laser\nBlue/anthracite/Watermolon/White",
+                          textAlign: TextAlign.right,
+                          style: TextStyle(color: grey),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Style: ",
+                          style: TextStyle(color: dark),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
-                        child: Container(
-                          width: 45,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: redPrimary,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
-                        child: Container(
-                          width: 45,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: greenPrimary,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
-                        child: Container(
-                          width: 45,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: purplePrimary,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
-                        child: Container(
-                          width: 45,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: dark,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
+                        Text(
+                          "CD0113-400",
+                          textAlign: TextAlign.right,
+                          style: TextStyle(color: grey),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      "The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivaled comfort and a striking visual experience.",
+                      style: TextStyle(color: grey),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ));
+  }
+}
+
+class SelectColorSection extends StatelessWidget {
+  const SelectColorSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
+          child: Container(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: yellowPrimary,
+            ),
+            child: Center(
+              child: Container(
+                width: 15,
+                height: 15,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: light,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
+          child: Container(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: bluePrimary,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
+          child: Container(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: redPrimary,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
+          child: Container(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: greenPrimary,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
+          child: Container(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: purplePrimary,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 12, 12, 12),
+          child: Container(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: dark,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
 
