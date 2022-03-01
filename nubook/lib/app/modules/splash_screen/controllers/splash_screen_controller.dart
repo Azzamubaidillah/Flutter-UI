@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class SplasScreenController extends GetxController {
+class SplashScreenController extends GetxController {
   //TODO: Implement SplasScreenController
 
   final count = 0.obs;

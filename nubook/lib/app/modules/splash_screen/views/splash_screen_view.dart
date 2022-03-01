@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 
@@ -8,16 +9,10 @@ class SplashScreenView extends GetView<SplashScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('SplasScreenView'),
-        centerTitle: true,
-      ),
       body: Center(
-        child: Text(
-          'SplasScreenView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+          child: SizedBox(
+              width: 0.5 * Get.width,
+              child: SvgPicture.asset("assets/icons/logo.svg"))),
     );
   }
 }
