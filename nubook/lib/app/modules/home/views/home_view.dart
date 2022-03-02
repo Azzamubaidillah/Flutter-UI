@@ -12,69 +12,182 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(kPadding, 0, 0, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Title(title: "Recommended"),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    RecommendedCard(
-                      image: "assets/images/image_1.png",
-                      tag: "Novel",
-                      title: "Sabtu Berasama\nBapak",
-                      subtitle: "Lorem ipsum dolor sit amet",
-                    ),
-                    SizedBox(width: 15),
-                    RecommendedCard(
-                      image: "assets/images/image_2.png",
-                      tag: "Investigasi",
-                      title: "Dibalik Investigasi\nTempo",
-                      subtitle: "Lorem ipsum dolor sit amet",
-                    ),
-                    SizedBox(width: 15),
-                  ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(kPadding, 0, 0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Title(title: "Recommended"),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      RecommendedCard(
+                        image: "assets/images/image_1.png",
+                        tag: "Novel",
+                        title: "Sabtu Berasama\nBapak",
+                        subtitle: "Lorem ipsum dolor sit amet",
+                      ),
+                      SizedBox(width: 15),
+                      RecommendedCard(
+                        image: "assets/images/image_2.png",
+                        tag: "Investigasi",
+                        title: "Dibalik Investigasi\nTempo",
+                        subtitle: "Lorem ipsum dolor sit amet",
+                      ),
+                      SizedBox(width: 15),
+                    ],
+                  ),
                 ),
-              ),
-              TitleWithButton(
-                title: "Recently Played",
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Card(
-                      image: "assets/images/image_3.png",
-                      title: "Manusia Setengah Dewa",
-                      artist: "Iwan Fals",
-                    ),
-                    SizedBox(width: 10),
-                    Card(
-                      image: "assets/images/image_4.png",
-                      title: "Tanpa Karena",
-                      artist: "Fiersa Besari",
-                    ),
-                    SizedBox(width: 10),
-                    Card(
-                      image: "assets/images/image_5.png",
-                      title: "Sahabat Sejati Paling Setia",
-                      artist: "Sheila on 7",
-                    ),
-                    SizedBox(width: 10),
-                  ],
+                TitleWithButton(
+                  title: "Recently Played",
                 ),
-              ),
-              TitleWithButton(
-                title: "My Campaign",
-              ),
-            ],
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Card(
+                        image: "assets/images/image_3.png",
+                        title: "Manusia Setengah Dewa",
+                        artist: "Iwan Fals",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/image_4.png",
+                        title: "Tanpa Karena",
+                        artist: "Fiersa Besari",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/image_5.png",
+                        title: "Sahabat Sejati Paling Setia",
+                        artist: "Sheila on 7",
+                      ),
+                      SizedBox(width: 10),
+                    ],
+                  ),
+                ),
+                TitleWithButton(
+                  title: "My Campaign",
+                ),
+                CampaignComponent(
+                  avatar: "assets/images/avatar_1.png",
+                  image: "assets/images/avatar_2.png",
+                  title: "Manusia Setengah Dewa",
+                  tag: "Inspirational Quotes",
+                  person: "Shohibul",
+                ),
+                Divider(),
+                CampaignComponent(
+                  avatar: "assets/images/avatar_3.png",
+                  image: "assets/images/avatar_4.png",
+                  title: "Tanpa Karena",
+                  tag: "Novel",
+                  person: "Muhammad",
+                )
+              ],
+            ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class CampaignComponent extends StatelessWidget {
+  const CampaignComponent({
+    Key? key,
+    required this.avatar,
+    required this.image,
+    required this.title,
+    required this.tag,
+    required this.person,
+  }) : super(key: key);
+
+  final String avatar, image, person, title, tag;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            CircleAvatar(
+              foregroundImage: AssetImage(avatar),
+              radius: 15,
+            ),
+            Text(
+              "  $person",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+            ),
+            Text(
+              " invite you to buy this book together",
+              style: TextStyle(fontSize: 10),
+            )
+          ],
+        ),
+        SizedBox(height: 5),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(image, width: 50),
+            ),
+            SizedBox(width: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                    ),
+                    Text(
+                      tag,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 11,
+                        color: kBlack.withOpacity(0.6),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            Expanded(
+              child: SizedBox(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: kPadding),
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: 50,
+                    height: 25,
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          "GET",
+                          style: TextStyle(color: kPrimary, fontSize: 8),
+                        ),
+                        style: ElevatedButton.styleFrom(primary: kGrayWhite)),
+                  ),
+                  Text(
+                    "get 30% off",
+                    style: TextStyle(fontSize: 8),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
