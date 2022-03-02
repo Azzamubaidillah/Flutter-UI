@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:nubook/const.dart';
 
 import '../controllers/onboarding_controller.dart';
 
@@ -50,10 +51,52 @@ class OnboardingView extends GetView<OnboardingController> {
           onDone: () {},
           showDoneButton: false,
           showNextButton: false,
+          dotsDecorator: DotsDecorator(activeColor: kPrimary),
           globalFooter: Column(
             children: [
-              ElevatedButton(onPressed: () {}, child: Text("Google")),
-              ElevatedButton(onPressed: () {}, child: Text("Google"))
+              SizedBox(
+                width: Get.width * 0.8,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text("CONTINUE WITH GOOLE"),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all(kButtonPrimary),
+                    shadowColor: MaterialStateProperty.all(Colors.white),
+                    padding: MaterialStateProperty.all(
+                      EdgeInsets.symmetric(vertical: 15),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 15),
+              SizedBox(
+                width: Get.width * 0.8,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "CONTINUE WITH FACEBOOK",
+                    style: TextStyle(color: kBlack),
+                  ),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all(kGrayWhite),
+                    shadowColor: MaterialStateProperty.all(Colors.white),
+                    padding: MaterialStateProperty.all(
+                      EdgeInsets.symmetric(vertical: 15),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 100)
             ],
           )),
     );
