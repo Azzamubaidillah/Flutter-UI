@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:nubook/app/routes/app_pages.dart';
 import 'package:nubook/const.dart';
 
 import '../controllers/onboarding_controller.dart';
@@ -57,7 +58,7 @@ class OnboardingView extends GetView<OnboardingController> {
               SizedBox(
                 width: Get.width * 0.8,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.offNamed(Routes.HOME),
                   child: Text("CONTINUE WITH GOOLE"),
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
