@@ -86,7 +86,31 @@ class HomeView extends GetView<HomeController> {
                   title: "Tanpa Karena",
                   tag: "Novel",
                   person: "Muhammad",
-                )
+                ),
+                TitleWithButton(
+                  title: "New Released",
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      RecommendedCard(
+                        image: "assets/images/image_1.png",
+                        tag: "Novel",
+                        title: "Sabtu Berasama\nBapak",
+                        subtitle: "Lorem ipsum dolor sit amet",
+                      ),
+                      SizedBox(width: 15),
+                      RecommendedCard(
+                        image: "assets/images/image_2.png",
+                        tag: "Investigasi",
+                        title: "Dibalik Investigasi\nTempo",
+                        subtitle: "Lorem ipsum dolor sit amet",
+                      ),
+                      SizedBox(width: 15),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -116,7 +140,7 @@ class CampaignComponent extends StatelessWidget {
           children: [
             CircleAvatar(
               foregroundImage: AssetImage(avatar),
-              radius: 15,
+              radius: 10,
             ),
             Text(
               "  $person",
@@ -178,6 +202,7 @@ class CampaignComponent extends StatelessWidget {
                         ),
                         style: ElevatedButton.styleFrom(primary: kGrayWhite)),
                   ),
+                  SizedBox(height: 5),
                   Text(
                     "get 30% off",
                     style: TextStyle(fontSize: 8),

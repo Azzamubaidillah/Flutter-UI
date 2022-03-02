@@ -9,6 +9,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: 4.6.1
   flutter_svg: 1.0.3
+  introduction_screen: 3.0.0
   flutter: 
     sdk: flutter
 
@@ -18,8 +19,9 @@ dev_dependencies:
     sdk: flutter
 
 flutter: 
-  uses-material-design: true
-
-  assets:
+  assets: 
     - assets/icons/
     - assets/images/
+    - assets/illustrations/
+  uses-material-design: true
+
