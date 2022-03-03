@@ -94,21 +94,26 @@ class HomeView extends GetView<HomeController> {
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        RecommendedCard(
-                          image: "assets/images/image_1.png",
-                          tag: "Novel",
-                          title: "Sabtu Berasama\nBapak",
-                          subtitle: "Lorem ipsum dolor sit amet",
+                        Card(
+                          image: "assets/images/image_6.png",
+                          title: "Manusia Setengah Dewa",
+                          artist: "Iwan Fals",
                         ),
-                        SizedBox(width: 15),
-                        RecommendedCard(
-                          image: "assets/images/image_2.png",
-                          tag: "Investigasi",
-                          title: "Dibalik Investigasi\nTempo",
-                          subtitle: "Lorem ipsum dolor sit amet",
+                        SizedBox(width: 10),
+                        Card(
+                          image: "assets/images/image_7.png",
+                          title: "Tanpa Karena",
+                          artist: "Fiersa Besari",
                         ),
-                        SizedBox(width: 15),
+                        SizedBox(width: 10),
+                        Card(
+                          image: "assets/images/image_8.png",
+                          title: "Sahabat Sejati Paling Setia",
+                          artist: "Sheila on 7",
+                        ),
+                        SizedBox(width: 10),
                       ],
                     ),
                   ),
