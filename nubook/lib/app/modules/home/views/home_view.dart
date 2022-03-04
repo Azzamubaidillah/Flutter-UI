@@ -128,25 +128,22 @@ class HomeView extends GetView<HomeController> {
               icon: SvgPicture.asset(
                 "assets/icons/foryou.svg",
                 color: kPrimary,
+                width: 30,
               ),
               label: "For You",
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/discover.svg"),
+              icon: SvgPicture.asset(
+                "assets/icons/discover.svg",
+              ),
               label: "Discover",
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/favorites.svg"),
-              label: "Favorites",
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset("assets/icons/me.svg"),
               label: "Me",
             ),
           ],
-          selectedLabelStyle: TextStyle(color: kPrimary),
-          showSelectedLabels: true,
-          iconSize: 8,
+          selectedLabelStyle: TextStyle(color: kGrayWhite),
         ));
   }
 }
