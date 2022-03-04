@@ -45,10 +45,68 @@ class DiscoverView extends GetView<DiscoverController> {
                     CardChart(image: "4"),
                   ],
                 ),
-              )
+              ),
+              TitleWithButton(title: "New Release"),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Card(
+                      image: "assets/images/image_6.png",
+                      title: "Manusia Setengah Dewa",
+                      artist: "Iwan Fals",
+                    ),
+                    SizedBox(width: 10),
+                    Card(
+                      image: "assets/images/image_7.png",
+                      title: "Tanpa Karena",
+                      artist: "Fiersa Besari",
+                    ),
+                    SizedBox(width: 10),
+                    Card(
+                      image: "assets/images/image_8.png",
+                      title: "Sahabat Sejati Paling Setia",
+                      artist: "Sheila on 7",
+                    ),
+                    SizedBox(width: 10),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TitleWithButton extends StatelessWidget {
+  const TitleWithButton({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:
+          const EdgeInsets.fromLTRB(0, kPadding / 2, kPadding, kPadding / 2),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Title(title: title),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              "See All",
+              style: TextStyle(
+                  fontSize: 14, fontWeight: FontWeight.w500, color: kPrimary),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -65,7 +123,7 @@ class CardCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, kPadding / 2, kPadding),
+      padding: const EdgeInsets.fromLTRB(0, 0, kPadding / 2, 0),
       child: ClipRRect(
         child: Image.asset(
           "assets/images/categories_$image.png",
@@ -88,7 +146,7 @@ class CardChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, kPadding / 2, kPadding),
+      padding: const EdgeInsets.fromLTRB(0, 0, kPadding / 2, 0),
       child: ClipRRect(
         child: Image.asset(
           "assets/images/chart_$image.png",
@@ -151,6 +209,48 @@ class Title extends StatelessWidget {
           fontSize: 18,
           color: kBlack,
         ),
+      ),
+    );
+  }
+}
+
+class Card extends StatelessWidget {
+  const Card({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.artist,
+  }) : super(key: key);
+
+  final String image, title, artist;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 130,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.asset(
+              image,
+              width: 130,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            title,
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            artist,
+            style: TextStyle(
+                fontSize: 13,
+                color: kBlack.withOpacity(0.6),
+                fontWeight: FontWeight.w500),
+          )
+        ],
       ),
     );
   }
