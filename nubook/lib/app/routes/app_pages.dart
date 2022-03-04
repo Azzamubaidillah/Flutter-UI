@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/discover/bindings/discover_binding.dart';
+import '../modules/discover/views/discover_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.ONBOARDING,
       page: () => OnboardingView(),
       binding: OnboardingBinding(),
+    ),
+    GetPage(
+      name: _Paths.DISCOVER,
+      page: () => DiscoverView(),
+      binding: DiscoverBinding(),
     ),
   ];
 }
