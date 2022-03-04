@@ -9,6 +9,7 @@ abstract class Routes {
   static const DISCOVER = _Paths.DISCOVER;
   static const FAVORITES = _Paths.FAVORITES;
   static const USER = _Paths.USER;
+  static const DASHBOARD = _Paths.DASHBOARD;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const DISCOVER = '/discover';
   static const FAVORITES = '/favorites';
   static const USER = '/user';
+  static const DASHBOARD = '/dashboard';
 }

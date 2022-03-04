@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/dashboard/bindings/dashboard_binding.dart';
+import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/discover/bindings/discover_binding.dart';
 import '../modules/discover/views/discover_view.dart';
 import '../modules/favorites/bindings/favorites_binding.dart';
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.USER,
       page: () => UserView(),
       binding: UserBinding(),
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => DashboardView(),
+      binding: DashboardBinding(),
     ),
   ];
 }
