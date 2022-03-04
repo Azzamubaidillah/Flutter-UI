@@ -12,68 +12,97 @@ class DiscoverView extends GetView<DiscoverController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(kPadding, 0, 0, 0),
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TitleWithSearchButton(title: "Search title, author or books"),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    CardCategories(image: "1"),
-                    CardCategories(image: "2"),
-                    CardCategories(image: "3"),
-                    CardCategories(image: "4"),
-                    CardCategories(image: "5"),
-                    CardCategories(image: "6"),
-                    CardCategories(image: "7"),
-                    CardCategories(image: "8"),
-                  ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(kPadding, 0, 0, 0),
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TitleWithSearchButton(title: "Search title, author or books"),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      CardCategories(image: "1"),
+                      CardCategories(image: "2"),
+                      CardCategories(image: "3"),
+                      CardCategories(image: "4"),
+                      CardCategories(image: "5"),
+                      CardCategories(image: "6"),
+                      CardCategories(image: "7"),
+                      CardCategories(image: "8"),
+                    ],
+                  ),
                 ),
-              ),
-              Title(title: "Charts"),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    CardChart(image: "1"),
-                    CardChart(image: "2"),
-                    CardChart(image: "3"),
-                    CardChart(image: "4"),
-                  ],
+                Title(title: "Charts"),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      CardChart(image: "1"),
+                      CardChart(image: "2"),
+                      CardChart(image: "3"),
+                      CardChart(image: "4"),
+                    ],
+                  ),
                 ),
-              ),
-              TitleWithButton(title: "New Release"),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Card(
-                      image: "assets/images/image_6.png",
-                      title: "Manusia Setengah Dewa",
-                      artist: "Iwan Fals",
-                    ),
-                    SizedBox(width: 10),
-                    Card(
-                      image: "assets/images/image_7.png",
-                      title: "Tanpa Karena",
-                      artist: "Fiersa Besari",
-                    ),
-                    SizedBox(width: 10),
-                    Card(
-                      image: "assets/images/image_8.png",
-                      title: "Sahabat Sejati Paling Setia",
-                      artist: "Sheila on 7",
-                    ),
-                    SizedBox(width: 10),
-                  ],
+                TitleWithButton(title: "New Release"),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Card(
+                        image: "assets/images/image_6.png",
+                        title: "Manusia Setengah Dewa",
+                        artist: "Iwan Fals",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/image_7.png",
+                        title: "Tanpa Karena",
+                        artist: "Fiersa Besari",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/image_8.png",
+                        title: "Sahabat Sejati Paling Setia",
+                        artist: "Sheila on 7",
+                      ),
+                      SizedBox(width: 10),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                TitleWithButton(title: "Top Trending"),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Card(
+                        image: "assets/images/trending_1.png",
+                        title: "Genit",
+                        artist: "Tipe-X",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/trending_2.png",
+                        title: "Tanpa Karena",
+                        artist: "Fiersa Besari",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/trending_3.png",
+                        title: "Dan",
+                        artist: "Sheila on 7",
+                      ),
+                      SizedBox(width: 10),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
