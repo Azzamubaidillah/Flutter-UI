@@ -12,139 +12,140 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(kPadding, 0, 0, 0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Title(title: "Recommended"),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        RecommendedCard(
-                          image: "assets/images/image_1.png",
-                          tag: "Novel",
-                          title: "Sabtu Berasama\nBapak",
-                          subtitle: "Lorem ipsum dolor sit amet",
-                        ),
-                        SizedBox(width: 15),
-                        RecommendedCard(
-                          image: "assets/images/image_2.png",
-                          tag: "Investigasi",
-                          title: "Dibalik Investigasi\nTempo",
-                          subtitle: "Lorem ipsum dolor sit amet",
-                        ),
-                        SizedBox(width: 15),
-                      ],
-                    ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(kPadding, 0, 0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Title(title: "Recommended"),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      RecommendedCard(
+                        image: "assets/images/image_1.png",
+                        tag: "Novel",
+                        title: "Sabtu Berasama\nBapak",
+                        subtitle: "Lorem ipsum dolor sit amet",
+                      ),
+                      SizedBox(width: 15),
+                      RecommendedCard(
+                        image: "assets/images/image_2.png",
+                        tag: "Investigasi",
+                        title: "Dibalik Investigasi\nTempo",
+                        subtitle: "Lorem ipsum dolor sit amet",
+                      ),
+                      SizedBox(width: 15),
+                    ],
                   ),
-                  TitleWithButton(
-                    title: "Recently Played",
+                ),
+                TitleWithButton(
+                  title: "Recently Played",
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Card(
+                        image: "assets/images/image_3.png",
+                        title: "Manusia Setengah Dewa",
+                        artist: "Iwan Fals",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/image_4.png",
+                        title: "Tanpa Karena",
+                        artist: "Fiersa Besari",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/image_5.png",
+                        title: "Sahabat Sejati Paling Setia",
+                        artist: "Sheila on 7",
+                      ),
+                      SizedBox(width: 10),
+                    ],
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Card(
-                          image: "assets/images/image_3.png",
-                          title: "Manusia Setengah Dewa",
-                          artist: "Iwan Fals",
-                        ),
-                        SizedBox(width: 10),
-                        Card(
-                          image: "assets/images/image_4.png",
-                          title: "Tanpa Karena",
-                          artist: "Fiersa Besari",
-                        ),
-                        SizedBox(width: 10),
-                        Card(
-                          image: "assets/images/image_5.png",
-                          title: "Sahabat Sejati Paling Setia",
-                          artist: "Sheila on 7",
-                        ),
-                        SizedBox(width: 10),
-                      ],
-                    ),
+                ),
+                TitleWithButton(
+                  title: "My Campaign",
+                ),
+                CampaignComponent(
+                  avatar: "assets/images/avatar_1.png",
+                  image: "assets/images/avatar_2.png",
+                  title: "Manusia Setengah Dewa",
+                  tag: "Inspirational Quotes",
+                  person: "Shohibul",
+                ),
+                Divider(),
+                CampaignComponent(
+                  avatar: "assets/images/avatar_3.png",
+                  image: "assets/images/avatar_4.png",
+                  title: "Tanpa Karena",
+                  tag: "Novel",
+                  person: "Muhammad",
+                ),
+                TitleWithButton(
+                  title: "New Released",
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Card(
+                        image: "assets/images/image_6.png",
+                        title: "Manusia Setengah Dewa",
+                        artist: "Iwan Fals",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/image_7.png",
+                        title: "Tanpa Karena",
+                        artist: "Fiersa Besari",
+                      ),
+                      SizedBox(width: 10),
+                      Card(
+                        image: "assets/images/image_8.png",
+                        title: "Sahabat Sejati Paling Setia",
+                        artist: "Sheila on 7",
+                      ),
+                      SizedBox(width: 10),
+                    ],
                   ),
-                  TitleWithButton(
-                    title: "My Campaign",
-                  ),
-                  CampaignComponent(
-                    avatar: "assets/images/avatar_1.png",
-                    image: "assets/images/avatar_2.png",
-                    title: "Manusia Setengah Dewa",
-                    tag: "Inspirational Quotes",
-                    person: "Shohibul",
-                  ),
-                  Divider(),
-                  CampaignComponent(
-                    avatar: "assets/images/avatar_3.png",
-                    image: "assets/images/avatar_4.png",
-                    title: "Tanpa Karena",
-                    tag: "Novel",
-                    person: "Muhammad",
-                  ),
-                  TitleWithButton(
-                    title: "New Released",
-                  ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Card(
-                          image: "assets/images/image_6.png",
-                          title: "Manusia Setengah Dewa",
-                          artist: "Iwan Fals",
-                        ),
-                        SizedBox(width: 10),
-                        Card(
-                          image: "assets/images/image_7.png",
-                          title: "Tanpa Karena",
-                          artist: "Fiersa Besari",
-                        ),
-                        SizedBox(width: 10),
-                        Card(
-                          image: "assets/images/image_8.png",
-                          title: "Sahabat Sejati Paling Setia",
-                          artist: "Sheila on 7",
-                        ),
-                        SizedBox(width: 10),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                "assets/icons/foryou.svg",
-                color: kPrimary,
-                width: 30,
-              ),
-              label: "For You",
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              "assets/icons/foryou.svg",
+              color: kPrimary,
+              width: 30,
             ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                "assets/icons/discover.svg",
-              ),
-              label: "Discover",
+            label: "For You",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              "assets/icons/discover.svg",
             ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/me.svg"),
-              label: "Me",
-            ),
-          ],
-          selectedLabelStyle: TextStyle(color: kGrayWhite),
-        ));
+            label: "Discover",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset("assets/icons/me.svg"),
+            label: "Me",
+          ),
+        ],
+        selectedLabelStyle: TextStyle(color: kGrayWhite),
+      ),
+    );
   }
 }
 
