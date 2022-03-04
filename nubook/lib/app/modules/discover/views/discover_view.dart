@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../const.dart';
+import '../../components.dart';
 import '../controllers/discover_controller.dart';
 
 class DiscoverView extends GetView<DiscoverController> {
@@ -35,7 +36,7 @@ class DiscoverView extends GetView<DiscoverController> {
                     ],
                   ),
                 ),
-                Title(title: "Charts"),
+                Titles(title: "Charts"),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -53,19 +54,19 @@ class DiscoverView extends GetView<DiscoverController> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Card(
+                      Cards(
                         image: "assets/images/image_6.png",
                         title: "Manusia Setengah Dewa",
                         artist: "Iwan Fals",
                       ),
                       SizedBox(width: 10),
-                      Card(
+                      Cards(
                         image: "assets/images/image_7.png",
                         title: "Tanpa Karena",
                         artist: "Fiersa Besari",
                       ),
                       SizedBox(width: 10),
-                      Card(
+                      Cards(
                         image: "assets/images/image_8.png",
                         title: "Sahabat Sejati Paling Setia",
                         artist: "Sheila on 7",
@@ -80,19 +81,19 @@ class DiscoverView extends GetView<DiscoverController> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Card(
+                      Cards(
                         image: "assets/images/trending_1.png",
                         title: "Genit",
                         artist: "Tipe-X",
                       ),
                       SizedBox(width: 10),
-                      Card(
+                      Cards(
                         image: "assets/images/trending_2.png",
                         title: "Tanpa Karena",
                         artist: "Fiersa Besari",
                       ),
                       SizedBox(width: 10),
-                      Card(
+                      Cards(
                         image: "assets/images/trending_3.png",
                         title: "Dan",
                         artist: "Sheila on 7",
@@ -105,37 +106,6 @@ class DiscoverView extends GetView<DiscoverController> {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class TitleWithButton extends StatelessWidget {
-  const TitleWithButton({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          const EdgeInsets.fromLTRB(0, kPadding / 2, kPadding, kPadding / 2),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Title(title: title),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              "See All",
-              style: TextStyle(
-                  fontSize: 14, fontWeight: FontWeight.w500, color: kPrimary),
-            ),
-          )
-        ],
       ),
     );
   }
@@ -202,7 +172,7 @@ class TitleWithSearchButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Title(title: title),
+          Titles(title: title),
           TextButton(
             onPressed: () {},
             child: IconButton(
@@ -213,72 +183,6 @@ class TitleWithSearchButton extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class Title extends StatelessWidget {
-  const Title({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: kPadding / 2),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontWeight: FontWeight.w800,
-          fontSize: 18,
-          color: kBlack,
-        ),
-      ),
-    );
-  }
-}
-
-class Card extends StatelessWidget {
-  const Card({
-    Key? key,
-    required this.image,
-    required this.title,
-    required this.artist,
-  }) : super(key: key);
-
-  final String image, title, artist;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 130,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              image,
-              width: 130,
-            ),
-          ),
-          SizedBox(height: 10),
-          Text(
-            title,
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-          ),
-          Text(
-            artist,
-            style: TextStyle(
-                fontSize: 13,
-                color: kBlack.withOpacity(0.6),
-                fontWeight: FontWeight.w500),
-          )
         ],
       ),
     );
