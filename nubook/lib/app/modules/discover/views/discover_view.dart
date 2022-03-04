@@ -15,27 +15,40 @@ class DiscoverView extends GetView<DiscoverController> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(kPadding, 0, 0, 0),
         child: SafeArea(
-            child: Column(
-          children: [
-            TitleWithSearchButton(title: "Search title, author or books"),
-            Divider(),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  CardCategories(image: "1"),
-                  CardCategories(image: "2"),
-                  CardCategories(image: "3"),
-                  CardCategories(image: "4"),
-                  CardCategories(image: "5"),
-                  CardCategories(image: "6"),
-                  CardCategories(image: "7"),
-                  CardCategories(image: "8"),
-                ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TitleWithSearchButton(title: "Search title, author or books"),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    CardCategories(image: "1"),
+                    CardCategories(image: "2"),
+                    CardCategories(image: "3"),
+                    CardCategories(image: "4"),
+                    CardCategories(image: "5"),
+                    CardCategories(image: "6"),
+                    CardCategories(image: "7"),
+                    CardCategories(image: "8"),
+                  ],
+                ),
               ),
-            )
-          ],
-        )),
+              Title(title: "Charts"),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    CardChart(image: "1"),
+                    CardChart(image: "2"),
+                    CardChart(image: "3"),
+                    CardChart(image: "4"),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -52,11 +65,34 @@ class CardCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
+      padding: const EdgeInsets.fromLTRB(0, 0, kPadding / 2, kPadding),
       child: ClipRRect(
         child: Image.asset(
           "assets/images/categories_$image.png",
           width: 100,
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+    );
+  }
+}
+
+class CardChart extends StatelessWidget {
+  const CardChart({
+    Key? key,
+    required this.image,
+  }) : super(key: key);
+
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, kPadding / 2, kPadding),
+      child: ClipRRect(
+        child: Image.asset(
+          "assets/images/chart_$image.png",
+          width: 150,
         ),
         borderRadius: BorderRadius.circular(15),
       ),

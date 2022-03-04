@@ -312,7 +312,7 @@ class Title extends StatelessWidget {
         title,
         style: TextStyle(
           fontWeight: FontWeight.w800,
-          fontSize: 22,
+          fontSize: 18,
           color: kBlack,
         ),
       ),
