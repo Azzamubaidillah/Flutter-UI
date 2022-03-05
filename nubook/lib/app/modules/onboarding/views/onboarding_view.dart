@@ -58,7 +58,7 @@ class OnboardingView extends GetView<OnboardingController> {
               SizedBox(
                 width: Get.width * 0.8,
                 child: ElevatedButton(
-                  onPressed: () => Get.offNamed(Routes.HOME),
+                  onPressed: () => Get.offNamed(Routes.DASHBOARD),
                   child: Text("CONTINUE WITH GOOLE"),
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
